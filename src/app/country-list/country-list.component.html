@@ -1,0 +1,15 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:mx-auto lg:mx-auto justify-items-center">
+    <div *ngFor="let country of countries"
+        class="w-full md:w-auto lg:w-auto max-w-sm rounded overflow-hidden bg-white flex items-center">
+        <div class="w-full">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{ shortenCountryName(country.name.common) }}</div>
+                <p class="text-gray-700 text-base">{{ country.capital }}</p>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
+                    En savoir plus
+                </button>
+            </div>
+        </div>
+        <img class="w-20 h-12 object-cover" [src]="country.flags.png" alt="Drapeau du pays">
+    </div>
+</div>
